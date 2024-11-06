@@ -1,0 +1,543 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and General */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+/* Smooth Transitions for Elements */
+a, button, .nav-links a, .project-item, .skills-list li {
+    transition: all 0.3s ease;
+}
+
+/* Navigation */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+.logo img{
+    width: 200px;
+    height: 70px;
+    /* border-radius: 50%; */
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #ffdd40;
+}
+
+
+
+
+
+
+/* Hero and About Combined Section */
+.hero-about {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+/* Styling for Hero Section */
+.hero-about .hero, .hero-about #about {
+    flex: 1 1 50%;
+    padding: 2rem;
+    color: #fff;
+}
+
+/* Center align text in Hero Section */
+.hero-about .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    animation: gradient 15s ease infinite;
+    text-align: center;
+}
+
+.hero-about .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-about .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-about .cta {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background: #ffdd40;
+    color: #333;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.hero-about .cta:hover {
+    transform: scale(1.1);
+}
+
+/* Styling for About Section */
+.hero-about #about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+    padding: 2rem;
+}
+
+.hero-about #about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero-about #about p {
+    max-width: 600px;
+}
+
+.hero-about .profile-picture {
+    width: 300px;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 1.5rem 0;
+    border: 5px solid #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.hero-about .profile-picture:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .hero-about {
+        flex-direction: column;
+    }
+
+    .hero-about .hero, .hero-about #about {
+        flex: 1 1 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Projects Section */
+#projects {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #2ebf91, #8360c3);
+    color: #fff;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project-list {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 1rem;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.project-item {
+    min-width: 380px;
+    height: 100%;
+    /* flex: 1 1 200px; */
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+
+/* Projects Section */
+#projects {
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #2ebf91, #8360c3);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    /* height: 350px; Adjust height for a larger view */
+    position: relative;
+    overflow: hidden; /* Hide content that overflows */
+}
+
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.project-list {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    /* flex-wrap: wrap; */
+    /* overflow: hidden; */
+    transition: transform 1s ease; /* Smooth transition for sliding */
+}
+
+.project-item {
+    /* height: ; */
+    min-width: 30%; /* Each project takes up 50% of the container (2 items visible at a time) */
+    position: relative;
+    /* padding: 1.5rem; */
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    overflow: hidden;
+}
+
+/* Project Image Styling */
+.project-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    z-index: -1;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+/* Text on Top of Image */
+.project-text {
+    position: absolute;
+    top: 50%;
+    font-size: 1.2rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 100; /* Ensures the text is above the image */
+}
+
+/* Hover Effects */
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.project-item:hover img{
+    opacity: 0.1;
+}
+
+/* Add more styling if needed */
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+
+
+
+/* Button Container (Optional, if you want to center it) */
+.button-container {
+    text-align: center; /* Centers the button horizontally */
+    margin-top: 2rem; /* Add some space above */
+}
+
+/* Styling the Button */
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    background: #c06868; /* Dark background */
+    color: white;
+    border-radius: 30px; /* Rounded corners */
+    text-align: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect */
+.button:hover {
+    background: #009efd; /* Light blue background on hover */
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+/* Focus effect (optional for accessibility) */
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #009efd; /* Blue focus ring */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Skills Section */
+#skills {
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #009efd, #2af598);
+    color: #fff;
+    text-align: center;
+    overflow: hidden; /* Ensures the list flows outside the container without breaking layout */
+    position: relative;
+}
+
+.skills-list {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    animation: scroll-left 20s linear infinite; /* Smooth scrolling animation */
+    white-space: nowrap; /* Prevent wrapping of the list */
+}
+
+.skills-list li {
+    list-style: none;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.skills-list li:hover {
+    transform: scale(1.1);
+}
+
+/* Animation to make the list scroll to the left */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+.second{
+    animation: scroll-right 20s linear infinite; /* Smooth scrolling animation */
+    margin-top: 10px;
+}
+
+
+/* Animation to make the list scroll to the left */
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Contact Section */
+#contact {
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #f12711, #f5af19);
+    color: #fff;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 500px;
+    margin: auto;
+}
+
+input, textarea {
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    padding: 0.8rem;
+    background-color: #ffdd40;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.icon-link {
+    color: #333;
+    font-size: 2.5rem;
+    transition: color 0.3s;
+}
+
+.icon-link:hover {
+    color: #0077b5; /* LinkedIn color */
+}
+
+/* Individual Icon Colors on Hover */
+.icon-link:nth-child(1):hover { color: #0077b5; } /* LinkedIn */
+.icon-link:nth-child(2):hover { color: #1DA1F2; } /* Twitter */
+.icon-link:nth-child(3):hover { color: #333; }   /* GitHub */
+.icon-link:nth-child(4):hover { color: #25D366; } /* WhatsApp */
+.icon-link:nth-child(5):hover { color: #D44638; } /* Gmail */
+
+
+
+
+
+
+.wait{
+    display: none;
+}
+
+
+
+
+/* Fade-in Animation */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav{
+        position: relative;
+        background-image: url(images/A9907AB1-DB54-40D8-B4DF-440F6D03B9A4_1_105_c.jpeg);
+        height: 100px;
+        background-size: cover;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.471);
+        background-blend-mode: color-dodge;
+    }
+    .nav-links {
+        position: absolute;
+    }
+    .project-item, .skills-list li {
+        flex: 1 1 100%;
+    }
+    .project-list {
+        width: 100%;
+        display: block;
+    }    
+    .logo{
+        display: none;
+    }
+    .wait{
+        display: block;
+    }
+    .hide{
+        display: none;
+    }
+
+}
